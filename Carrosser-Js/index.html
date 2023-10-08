@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        } 
+
+        .container {
+            position: relative;
+            max-width: 1200px;
+            margin: 300px auto;
+        }
+
+        .gallery-wrapper {
+            overflow-x: auto;
+        }
+
+        .arrow-left,
+        .arrow-right {
+            position: absolute;
+            top: 0;
+            left: -40px;
+            right: auto;
+            bottom: 0;
+            font-size: 20px;
+            line-height: 250px;
+            width: 40px;
+            color: #fff;
+            transition: all 600ms ease-in-out;
+            background: linear-gradient(to left, transparent 0%, black 200%);
+            opacity: 0.1;
+            cursor: pointer;
+            border: none;
+        }
+
+        .arrow-left:hover,
+        .arrow-right:hover {
+            opacity: 1;
+        }
+
+        .arrow-right {
+            right: -40px;
+            left: auto;
+            text-align: right;
+            background: linear-gradient(to right, transparent 0%, black 200%);
+        }
+
+        .gallery {
+            display: flex;
+            flex-flow: row nowrap;
+        }
+
+        .item {
+            width: 400px;
+            height: 300px;
+            flex-shrink: 0;
+            transition: all 600ms ease-in-out;
+            opacity: 0.5;
+        }
+
+        .current-item {
+            opacity: 1;
+        }
+
+        /* This is from w3schools */
+        /* 
+https://www.w3schools.com/howto/howto_css_hide_scrollbars.asp */
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .gallery-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .gallery-wrapper {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <button class="arrow-left control" aria-label="Previous image">◀</button>
+        <button class="arrow-right control" aria-label="Next Image">▶</button>
+        <div class="gallery-wrapper">
+            <div class="gallery">
+                <img src="https://source.unsplash.com/random/300x400/?beach" alt="Beach Image"
+                    class="item current-item">
+                <img src="https://source.unsplash.com/random/300x400/?animal" alt="Animal Image"
+                    class="item current-item">
+                <img src="https://source.unsplash.com/random/300x400/?street" alt="Street Image"
+                    class="item current-item">
+                <img src="https://source.unsplash.com/random/300x400/?zoo" alt="Zoo Image" class="item current-item">
+                <img src="https://source.unsplash.com/random/300x400/?model" alt="Model Image"
+                    class="item current-item">
+            </div>
+        </div>
+    </div>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum, molestiae delectus. Nulla, consectetur repellendus ipsam minus amet aut magni unde vero ipsa quisquam tempora! Quisquam quod impedit accusamus, ducimus explicabo quo numquam vel, sed blanditiis maiores voluptate, officiis minima fugiat consectetur molestias. Inventore quisquam consequuntur, ut dignissimos repellendus provident, repellat veritatis laudantium doloremque porro reiciendis aperiam sit quaerat soluta, quibusdam officia facere itaque ex. Odio, quidem perferendis obcaecati molestiae veniam excepturi suscipit est nam facilis quod. Illo excepturi, assumenda eveniet nihil natus quod nobis iste id voluptates saepe possimus, quam eos voluptas magni tempora eum in debitis ipsum incidunt? Molestiae, ex reprehenderit necessitatibus rem nemo consectetur sapiente! Sit modi fugit ipsum sapiente iure, eligendi ea saepe mollitia esse dolorum reprehenderit rerum magni blanditiis? Excepturi velit exercitationem nihil ex quibusdam ullam ipsam, perspiciatis dolorum sequi optio consectetur nemo voluptas incidunt distinctio! Iste, molestiae. Eaque blanditiis ratione esse cumque enim accusantium minima rem, voluptates adipisci dolore tenetur quis reprehenderit nulla tempora illum, eligendi similique. Velit facere et quisquam quasi iusto voluptates, labore ipsum cupiditate a, enim aperiam dignissimos numquam minus quam excepturi, corporis accusamus. Repellendus delectus nesciunt exercitationem consequuntur nulla itaque facere iusto ut laboriosam error odit, fuga perferendis facilis impedit distinctio molestiae pariatur dolorum ab corrupti adipisci nam? Nisi rem, saepe, magni ipsum quas excepturi culpa exercitationem sit reprehenderit fugit ex perferendis iure fuga optio pariatur voluptatum dignissimos consequatur adipisci eligendi architecto non praesentium officiis provident facere. Maiores facilis a optio cumque saepe recusandae eum ducimus eos nostrum quidem laudantium ratione perferendis sequi repellendus consequuntur minus, amet exercitationem ut cum ipsum enim! Perspiciatis quibusdam neque, quaerat dolor ratione deserunt sapiente. Ducimus quam ea quaerat maxime! Alias dolores tempora modi maxime ad neque corrupti dignissimos deleniti ea quibusdam repellat error doloribus asperiores, quo possimus quidem impedit. Eligendi ab magnam quibusdam, ex aliquid consequatur ipsa iste alias fugit optio quas, libero cum possimus. Distinctio a labore quos in similique recusandae earum ipsa veritatis natus soluta, quibusdam, iste culpa ex amet magnam ipsam voluptatem odio deserunt. Atque veritatis iusto ullam consequuntur eligendi quod magnam natus excepturi reprehenderit et laborum, est exercitationem nostrum quis doloribus. Eos deserunt ex voluptate aliquam ea eveniet corrupti maiores, eum quisquam veniam. Maxime ducimus nesciunt quia quos magnam nam, porro velit aliquam! Accusantium voluptates nisi ipsam debitis, explicabo recusandae doloribus ipsa reiciendis quae nam iste error illo quaerat maxime! Placeat porro harum minima ex quos maiores aliquam, animi a suscipit dolor pariatur magnam neque dicta voluptatum corporis ea expedita nostrum, eos error repudiandae nemo natus beatae modi. Cum quam optio repellat quod velit exercitationem, dicta dolores quas consequuntur a non magni esse aperiam eligendi unde ullam aliquam voluptatem dignissimos voluptate mollitia vitae illo ad, et laudantium? Ducimus nam provident recusandae illum nostrum sapiente doloribus reprehenderit minus omnis voluptates! Blanditiis consequatur sequi beatae iusto quaerat reprehenderit eius mollitia vero perferendis quisquam velit eos quo provident hic, voluptate nobis voluptates a maiores ut corrupti qui sit necessitatibus ullam. Quibusdam nulla provident quasi dolorum officiis. Explicabo esse magni aliquid impedit ad voluptatibus labore? Odio cupiditate quaerat cum reiciendis consectetur ut, voluptas qui distinctio, doloribus facilis doloremque vero suscipit vitae minus tempora provident, facere saepe tenetur omnis dolorem? Iusto excepturi odio nulla consequatur dolore magni. Deleniti omnis neque rerum dolore maiores laudantium mollitia, rem dicta, voluptatibus ducimus fugiat repellendus animi ex porro velit tempore iste voluptatem cumque? Ipsam aperiam atque recusandae eligendi esse, laudantium quia labore quos voluptate deserunt voluptatum. Atque, blanditiis fugiat dignissimos voluptates vero, nostrum architecto ipsam sed officiis labore voluptate repudiandae eligendi error ducimus quos voluptatem quidem. Deleniti expedita corrupti, placeat mollitia quaerat beatae est dicta ut! Veritatis deserunt est sequi nesciunt praesentium unde magnam similique, excepturi fuga. Officiis dolorum excepturi ipsam. In iure doloremque quae temporibus debitis? Tenetur autem mollitia voluptate ad doloribus dolorem hic accusantium voluptates iste ullam iure eos expedita iusto rerum excepturi adipisci officiis aperiam reprehenderit assumenda animi nesciunt, tempora dignissimos reiciendis quo. Quod, architecto ipsam. Sint dicta incidunt facere fugit, ad, iusto dolores quis possimus, fuga sed officiis magnam totam veniam ab ut eum quae expedita doloribus. Quam, similique autem recusandae nemo modi a labore dolore saepe velit possimus maxime praesentium nostrum magni repellendus eveniet omnis! Voluptatibus itaque fugiat accusamus nam totam nostrum vel nisi unde illum aut! Id adipisci eligendi eveniet ullam veritatis illum, facere aperiam, eius perspiciatis accusantium error hic exercitationem voluptatibus in architecto nam earum quibusdam aliquam quam libero blanditiis! Ab minus aliquam ratione necessitatibus odit illum laboriosam odio dignissimos recusandae impedit, vero, velit inventore placeat? Corporis, a laborum provident expedita optio animi dicta nulla quaerat at quo soluta, possimus, quasi ipsam eaque quisquam cupiditate officiis harum atque quidem reprehenderit esse. Dignissimos porro repellendus optio voluptatem aliquam repudiandae magni, doloremque vero ratione accusamus quo beatae pariatur. Eveniet deleniti ratione ea incidunt reiciendis mollitia quisquam, accusantium sequi rem facilis earum dicta nobis est illum nihil! Aperiam voluptatibus odit iure unde quisquam enim, quasi repellat ipsum esse dolores blanditiis veritatis iusto cum suscipit id reiciendis assumenda officia similique earum! Cum officiis quibusdam eum ipsum repellat ducimus, fugiat veritatis repellendus officia perspiciatis vel amet autem consectetur nam veniam dicta illum mollitia perferendis! Corrupti deleniti tenetur sunt! Voluptates adipisci possimus distinctio facilis, assumenda doloribus inventore dignissimos neque temporibus nostrum dicta debitis in dolorem, ratione laborum enim. Odio fugit quae maiores assumenda quibusdam? Earum ad similique cumque. Fugit amet qui mollitia nesciunt porro, hic impedit quia, pariatur earum voluptate unde placeat nemo provident consectetur! Atque delectus ducimus voluptate.</p>
+
+    <script>
+        const controls = document.querySelectorAll(".control");
+        let currentItem = 0;
+        const items = document.querySelectorAll(".item");
+        const maxItems = items.length;
+
+        controls.forEach((control) => {
+            control.addEventListener("click", (e) => {
+                isLeft = e.target.classList.contains("arrow-left");
+
+                if (isLeft) {
+                    currentItem -= 1;
+                } else {
+                    currentItem += 1;
+                }
+
+                if (currentItem >= maxItems) {
+                    currentItem = 0;
+                }
+
+                if (currentItem < 0) {
+                    currentItem = maxItems - 1;
+                }
+
+                items.forEach((item) => item.classList.remove("current-item"));
+
+                items[currentItem].scrollIntoView({
+                    behavior: "smooth",
+                    inline: "center"
+                });
+
+                items[currentItem].classList.add("current-item");
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
